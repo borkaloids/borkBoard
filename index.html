@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<title>BorkBoard</title>
+<style>
+body{
+	background: black;
+}
+#bork{
+	height: calc(100vh - 102px);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation-play-state: paused;
+}
+.key{
+	background: white; 
+	border: 1px solid grey;
+	border-left: 0;
+	border-bottom-left-radius:5px; 
+	border-bottom-right-radius:5px; 
+	position: absolute; 
+	bottom: 0px; 
+	left: calc(2.777777777vw * 2); 
+	height: 100px; 
+	width: calc(2.777777777vw - 1px);
+	text-align: center;
+}
+.key p{
+	padding-top: 65px;
+}
+.smolkey{
+	background: black;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: absolute;
+	height: 75px;
+	width: calc(2.777777777vw / 2);
+	bottom: 27px;
+	z-index: 5;
+}
+.pressed{
+	background-color: grey;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var counter = 0;
+	$("#board").children().each(function(index){
+		if($(this).hasClass("key")){
+			$(this).css("left","calc(2.777777777vw * " + counter + ")");
+			$(this).addClass(counter + "")
+			counter++;
+			switch(counter%7){
+				case 1:
+					$(this).html("<p>C</p>");
+					break;
+				case 2:
+					$(this).html("<p>D</p>");
+					break;
+				case 3:
+					$(this).html("<p>E</p>");
+					break;
+				case 4:
+					$(this).html("<p>F</p>");
+					break;
+				case 5:
+					$(this).html("<p>G</p>");
+					break;
+				case 6:
+					$(this).html("<p>A</p>");
+					break;
+				case 0:
+					$(this).html("<p>B</p>");
+					break;
+				default:
+			}
+		}
+		else{
+			$(this).css("left","calc((2.777777777vw * " + counter + ") - (2.777777777vw / 4))")
+			$(this).addClass(counter + "sharp")
+		}
+	})
+})
+
+$(document).on('keydown',function(event){
+	if([49, 50, 51, 52, 53, 54, 55, 56, 57, 48,81,87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75, 76, 90, 88, 67, 86, 66, 78, 77].indexOf(event.which) > -1){
+		console.log(event.which)
+		$("#bork").css("background-image","url('http://i.imgur.com/8IdEuo8.gif')")
+	}
+	switch(event.which){
+		case 49:
+			$(".0").addClass("pressed");
+			break;
+		case 50:
+			$(".1").addClass("pressed");
+			break;
+		case 51:
+			$(".2").addClass("pressed");
+			break;
+		case 52:
+			$(".3").addClass("pressed");
+			break;
+		case 53:
+			$(".4").addClass("pressed");
+			break;
+		case 54:
+			$(".5").addClass("pressed");
+			break;
+		case 55:
+			$(".6").addClass("pressed");
+			break;
+		case 56:
+			$(".7").addClass("pressed");
+			break;
+		case 57:
+			$(".8").addClass("pressed");
+			break;
+		case 48:
+			$(".9").addClass("pressed");
+			break;
+		case 81:
+			$(".10").addClass("pressed");
+			break;
+		case 87:
+			$(".11").addClass("pressed");
+			break;
+		case 69:
+			$(".12").addClass("pressed");
+			break;
+		case 82:
+			$(".13").addClass("pressed");
+			break;
+		case 84:
+			$(".14").addClass("pressed");
+			break;
+		case 89:
+			$(".15").addClass("pressed");
+			break;
+		case 85:
+			$(".16").addClass("pressed");
+			break;
+		case 73:
+			$(".17").addClass("pressed");
+			break;
+		case 79:
+			$(".18").addClass("pressed");
+			break;
+		case 80:
+			$(".19").addClass("pressed");
+			break;
+		case 65:
+			$(".20").addClass("pressed");
+			break;
+		case 83:
+			$(".21").addClass("pressed");
+			break;
+		case 68:
+			$(".22").addClass("pressed");
+			break;
+		case 70:
+			$(".23").addClass("pressed");
+			break;
+		case 71:
+			$(".24").addClass("pressed");
+			break;
+		case 72:
+			$(".25").addClass("pressed");
+			break;
+		case 74:
+			$(".26").addClass("pressed");
+			break;
+		case 75:
+			$(".27").addClass("pressed");
+			break;
+		case 76:
+			$(".28").addClass("pressed");
+			break;
+		case 90:
+			$(".29").addClass("pressed");
+			break;
+		case 88:
+			$(".30").addClass("pressed");
+			break;
+		case 67:
+			$(".31").addClass("pressed");
+			break;
+		case 86:
+			$(".32").addClass("pressed");
+			break;
+		case 66:
+			$(".33").addClass("pressed");
+			break;
+		case 78:
+			$(".34").addClass("pressed");
+			break;
+		case 77:
+			$(".35").addClass("pressed");
+			break;
+	}
+})
+$(document).on('keyup',function(event){
+	console.log('up')
+	$("#bork").css("background-image","url()")
+	switch(event.which){
+		case 49:
+			$(".0").removeClass("pressed");
+			break;
+		case 50:
+			$(".1").removeClass("pressed");
+			break;
+		case 51:
+			$(".2").removeClass("pressed");
+			break;
+		case 52:
+			$(".3").removeClass("pressed");
+			break;
+		case 53:
+			$(".4").removeClass("pressed");
+			break;
+		case 54:
+			$(".5").removeClass("pressed");
+			break;
+		case 55:
+			$(".6").removeClass("pressed");
+			break;
+		case 56:
+			$(".7").removeClass("pressed");
+			break;
+		case 57:
+			$(".8").removeClass("pressed");
+			break;
+		case 48:
+			$(".9").removeClass("pressed");
+			break;
+		case 81:
+			$(".10").removeClass("pressed");
+			break;
+		case 87:
+			$(".11").removeClass("pressed");
+			break;
+		case 69:
+			$(".12").removeClass("pressed");
+			break;
+		case 82:
+			$(".13").removeClass("pressed");
+			break;
+		case 84:
+			$(".14").removeClass("pressed");
+			break;
+		case 89:
+			$(".15").removeClass("pressed");
+			break;
+		case 85:
+			$(".16").removeClass("pressed");
+			break;
+		case 73:
+			$(".17").removeClass("pressed");
+			break;
+		case 79:
+			$(".18").removeClass("pressed");
+			break;
+		case 80:
+			$(".19").removeClass("pressed");
+			break;
+		case 65:
+			$(".20").removeClass("pressed");
+			break;
+		case 83:
+			$(".21").removeClass("pressed");
+			break;
+		case 68:
+			$(".22").removeClass("pressed");
+			break;
+		case 70:
+			$(".23").removeClass("pressed");
+			break;
+		case 71:
+			$(".24").removeClass("pressed");
+			break;
+		case 72:
+			$(".25").removeClass("pressed");
+			break;
+		case 74:
+			$(".26").removeClass("pressed");
+			break;
+		case 75:
+			$(".27").removeClass("pressed");
+			break;
+		case 76:
+			$(".28").removeClass("pressed");
+			break;
+		case 90:
+			$(".29").removeClass("pressed");
+			break;
+		case 88:
+			$(".30").removeClass("pressed");
+			break;
+		case 67:
+			$(".31").removeClass("pressed");
+			break;
+		case 86:
+			$(".32").removeClass("pressed");
+			break;
+		case 66:
+			$(".33").removeClass("pressed");
+			break;
+		case 78:
+			$(".34").removeClass("pressed");
+			break;
+		case 77:
+			$(".35").removeClass("pressed");
+			break;
+	}
+})
+</script>
+</head>
+
+<body>
+	<div id="bork">
+	</div>
+	<div id="board">
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="smolkey"></div>	
+		<div class="key"></div>
+		<div class="key"></div>
+	</div>
+</body>
+
+</html>
