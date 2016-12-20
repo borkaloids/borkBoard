@@ -47,6 +47,7 @@ body{
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
+var shift = false;
 $(document).ready(function(){
 	var counter = 0;
 	$("#board").children().each(function(index){
@@ -80,7 +81,7 @@ $(document).ready(function(){
 			}
 		}
 		else{
-			$(this).css("left","calc((2.777777777vw * " + counter + ") - (2.777777777vw / 4))")
+			$(this).css("left","calc((2.777777777vw * " + counter + ") + (2.777777777vw / 1.25))")
 			$(this).addClass(counter + "sharp")
 		}
 	})
@@ -92,113 +93,224 @@ $(document).on('keydown',function(event){
 		$("#bork").css("background-image","url('http://i.imgur.com/8IdEuo8.gif')")
 	}
 	switch(event.which){
+		case 16:
+			shift = true;
+			break;
 		case 49:
-			$(".0").addClass("pressed");
+			if(shift == true)
+				$(".0sharp").addClass("pressed");
+			else
+				$(".0").addClass("pressed");
 			break;
 		case 50:
-			$(".1").addClass("pressed");
+			if(shift == true)
+				$(".1sharp").addClass("pressed");
+			else
+				$(".1").addClass("pressed");
 			break;
 		case 51:
-			$(".2").addClass("pressed");
+			if(shift == true)
+				$(".2sharp").addClass("pressed");
+			else
+				$(".2").addClass("pressed");
 			break;
 		case 52:
-			$(".3").addClass("pressed");
+			if(shift == true)
+				$(".3sharp").addClass("pressed");
+			else
+				$(".3").addClass("pressed");
 			break;
 		case 53:
-			$(".4").addClass("pressed");
+			if(shift == true)
+				$(".4sharp").addClass("pressed");
+			else
+				$(".4").addClass("pressed");
 			break;
 		case 54:
-			$(".5").addClass("pressed");
+			if(shift == true)
+				$(".5sharp").addClass("pressed");
+			else
+				$(".5").addClass("pressed");
 			break;
 		case 55:
-			$(".6").addClass("pressed");
+			if(shift == true)
+				$(".6sharp").addClass("pressed");
+			else
+				$(".6").addClass("pressed");
 			break;
 		case 56:
-			$(".7").addClass("pressed");
+			if(shift == true)
+				$(".7sharp").addClass("pressed");
+			else
+				$(".7").addClass("pressed");
 			break;
 		case 57:
-			$(".8").addClass("pressed");
+			if(shift == true)
+				$(".8sharp").addClass("pressed");
+			else
+				$(".8").addClass("pressed");
 			break;
 		case 48:
-			$(".9").addClass("pressed");
+			if(shift == true)
+				$(".9sharp").addClass("pressed");
+			else
+				$(".9").addClass("pressed");
 			break;
 		case 81:
-			$(".10").addClass("pressed");
+			if(shift == true)
+				$(".10sharp").addClass("pressed");
+			else
+				$(".10").addClass("pressed");
 			break;
 		case 87:
-			$(".11").addClass("pressed");
+			if(shift == true)
+				$(".11sharp").addClass("pressed");
+			else
+				$(".11").addClass("pressed");
 			break;
 		case 69:
-			$(".12").addClass("pressed");
+			if(shift == true)
+				$(".12sharp").addClass("pressed");
+			else
+				$(".12").addClass("pressed");
 			break;
 		case 82:
-			$(".13").addClass("pressed");
+			if(shift == true)
+				$(".13sharp").addClass("pressed");
+			else
+				$(".13").addClass("pressed");
 			break;
 		case 84:
-			$(".14").addClass("pressed");
+			if(shift == true)
+				$(".14sharp").addClass("pressed");
+			else
+				$(".14").addClass("pressed");
 			break;
 		case 89:
-			$(".15").addClass("pressed");
+			if(shift == true)
+				$(".15sharp").addClass("pressed");
+			else
+				$(".15").addClass("pressed");
 			break;
 		case 85:
-			$(".16").addClass("pressed");
+			if(shift == true)
+				$(".16sharp").addClass("pressed");
+			else
+				$(".16").addClass("pressed");
 			break;
 		case 73:
-			$(".17").addClass("pressed");
+			if(shift == true)
+				$(".17sharp").addClass("pressed");
+			else
+				$(".17").addClass("pressed");
 			break;
 		case 79:
-			$(".18").addClass("pressed");
+			if(shift == true)
+				$(".18sharp").addClass("pressed");
+			else
+				$(".18").addClass("pressed");
 			break;
 		case 80:
-			$(".19").addClass("pressed");
+			if(shift == true)
+				$(".19sharp").addClass("pressed");
+			else
+				$(".19").addClass("pressed");
 			break;
 		case 65:
-			$(".20").addClass("pressed");
+			if(shift == true)
+				$(".20sharp").addClass("pressed");
+			else
+				$(".20").addClass("pressed");
 			break;
 		case 83:
-			$(".21").addClass("pressed");
+			if(shift == true)
+				$(".21sharp").addClass("pressed");
+			else
+				$(".21").addClass("pressed");
 			break;
 		case 68:
-			$(".22").addClass("pressed");
+			if(shift == true)
+				$(".22sharp").addClass("pressed");
+			else
+				$(".22").addClass("pressed");
 			break;
 		case 70:
-			$(".23").addClass("pressed");
+			if(shift == true)
+				$(".23sharp").addClass("pressed");
+			else
+				$(".23").addClass("pressed");
 			break;
 		case 71:
-			$(".24").addClass("pressed");
+			if(shift == true)
+				$(".24sharp").addClass("pressed");
+			else
+				$(".24").addClass("pressed");
 			break;
 		case 72:
-			$(".25").addClass("pressed");
+			if(shift == true)
+				$(".25sharp").addClass("pressed");
+			else
+				$(".25").addClass("pressed");
 			break;
 		case 74:
-			$(".26").addClass("pressed");
+			if(shift == true)
+				$(".26sharp").addClass("pressed");
+			else
+				$(".26").addClass("pressed");
 			break;
 		case 75:
-			$(".27").addClass("pressed");
+			if(shift == true)
+				$(".27sharp").addClass("pressed");
+			else
+				$(".27").addClass("pressed");
 			break;
 		case 76:
-			$(".28").addClass("pressed");
+			if(shift == true)
+				$(".28sharp").addClass("pressed");
+			else
+				$(".28").addClass("pressed");
 			break;
 		case 90:
-			$(".29").addClass("pressed");
+			if(shift == true)
+				$(".29sharp").addClass("pressed");
+			else
+				$(".29").addClass("pressed");
 			break;
 		case 88:
-			$(".30").addClass("pressed");
+			if(shift == true)
+				$(".30sharp").addClass("pressed");
+			else
+				$(".30").addClass("pressed");
 			break;
 		case 67:
-			$(".31").addClass("pressed");
+			if(shift == true)
+				$(".31sharp").addClass("pressed");
+			else
+				$(".31").addClass("pressed");
 			break;
 		case 86:
-			$(".32").addClass("pressed");
+			if(shift == true)
+				$(".32sharp").addClass("pressed");
+			else
+				$(".32").addClass("pressed");
 			break;
 		case 66:
-			$(".33").addClass("pressed");
+			if(shift == true)
+				$(".33sharp").addClass("pressed");
+			else
+				$(".33").addClass("pressed");
 			break;
 		case 78:
-			$(".34").addClass("pressed");
+			if(shift == true)
+				$(".34sharp").addClass("pressed");
+			else
+				$(".34").addClass("pressed");
 			break;
 		case 77:
-			$(".35").addClass("pressed");
+			if(shift == true)
+				$(".35sharp").addClass("pressed");
+			else
+				$(".35").addClass("pressed");
 			break;
 	}
 })
@@ -206,113 +318,152 @@ $(document).on('keyup',function(event){
 	console.log('up')
 	$("#bork").css("background-image","url()")
 	switch(event.which){
+		case 16:
+			shift = false;
+			break;
 		case 49:
 			$(".0").removeClass("pressed");
+			$(".0sharp").removeClass("pressed");
 			break;
 		case 50:
 			$(".1").removeClass("pressed");
+			$(".1sharp").removeClass("pressed");
 			break;
 		case 51:
 			$(".2").removeClass("pressed");
+			$(".2sharp").removeClass("pressed");
 			break;
 		case 52:
 			$(".3").removeClass("pressed");
+			$(".3sharp").removeClass("pressed");
 			break;
 		case 53:
 			$(".4").removeClass("pressed");
+			$(".4sharp").removeClass("pressed");
 			break;
 		case 54:
 			$(".5").removeClass("pressed");
+			$(".5sharp").removeClass("pressed");
 			break;
 		case 55:
 			$(".6").removeClass("pressed");
+			$(".6sharp").removeClass("pressed");
 			break;
 		case 56:
 			$(".7").removeClass("pressed");
+			$(".7sharp").removeClass("pressed");
 			break;
 		case 57:
 			$(".8").removeClass("pressed");
+			$(".8sharp").removeClass("pressed");
 			break;
 		case 48:
 			$(".9").removeClass("pressed");
+			$(".9sharp").removeClass("pressed");
 			break;
 		case 81:
 			$(".10").removeClass("pressed");
+			$(".10sharp").removeClass("pressed");
 			break;
 		case 87:
 			$(".11").removeClass("pressed");
+			$(".11sharp").removeClass("pressed");
 			break;
 		case 69:
 			$(".12").removeClass("pressed");
+			$(".12sharp").removeClass("pressed");
 			break;
 		case 82:
 			$(".13").removeClass("pressed");
+			$(".13sharp").removeClass("pressed");
 			break;
 		case 84:
 			$(".14").removeClass("pressed");
+			$(".14sharp").removeClass("pressed");
 			break;
 		case 89:
 			$(".15").removeClass("pressed");
+			$(".15sharp").removeClass("pressed");
 			break;
 		case 85:
 			$(".16").removeClass("pressed");
+			$(".16sharp").removeClass("pressed");
 			break;
 		case 73:
 			$(".17").removeClass("pressed");
+			$(".17sharp").removeClass("pressed");
 			break;
 		case 79:
 			$(".18").removeClass("pressed");
+			$(".18sharp").removeClass("pressed");
 			break;
 		case 80:
 			$(".19").removeClass("pressed");
+			$(".19sharp").removeClass("pressed");
 			break;
 		case 65:
 			$(".20").removeClass("pressed");
+			$(".20sharp").removeClass("pressed");
 			break;
 		case 83:
 			$(".21").removeClass("pressed");
+			$(".21sharp").removeClass("pressed");
 			break;
 		case 68:
 			$(".22").removeClass("pressed");
+			$(".22sharp").removeClass("pressed");
 			break;
 		case 70:
 			$(".23").removeClass("pressed");
+			$(".23sharp").removeClass("pressed");
 			break;
 		case 71:
 			$(".24").removeClass("pressed");
+			$(".24sharp").removeClass("pressed");
 			break;
 		case 72:
 			$(".25").removeClass("pressed");
+			$(".25sharp").removeClass("pressed");
 			break;
 		case 74:
 			$(".26").removeClass("pressed");
+			$(".26sharp").removeClass("pressed");
 			break;
 		case 75:
 			$(".27").removeClass("pressed");
+			$(".27sharp").removeClass("pressed");
 			break;
 		case 76:
 			$(".28").removeClass("pressed");
+			$(".28sharp").removeClass("pressed");
 			break;
 		case 90:
 			$(".29").removeClass("pressed");
+			$(".29sharp").removeClass("pressed");
 			break;
 		case 88:
 			$(".30").removeClass("pressed");
+			$(".30sharp").removeClass("pressed");
 			break;
 		case 67:
 			$(".31").removeClass("pressed");
+			$(".31sharp").removeClass("pressed");
 			break;
 		case 86:
 			$(".32").removeClass("pressed");
+			$(".32sharp").removeClass("pressed");
 			break;
 		case 66:
 			$(".33").removeClass("pressed");
+			$(".33sharp").removeClass("pressed");
 			break;
 		case 78:
 			$(".34").removeClass("pressed");
+			$(".34sharp").removeClass("pressed");
 			break;
 		case 77:
 			$(".35").removeClass("pressed");
+			$(".35sharp").removeClass("pressed");
 			break;
 	}
 })
@@ -323,7 +474,6 @@ $(document).on('keyup',function(event){
 	<div id="bork">
 	</div>
 	<div id="board">
-		<div class="key"></div>
 		<div class="smolkey"></div>	
 		<div class="key"></div>
 		<div class="smolkey"></div>	
@@ -382,6 +532,7 @@ $(document).on('keyup',function(event){
 		<div class="smolkey"></div>	
 		<div class="key"></div>
 		<div class="smolkey"></div>	
+		<div class="key"></div>
 		<div class="key"></div>
 		<div class="key"></div>
 	</div>
